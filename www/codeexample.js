@@ -3,7 +3,7 @@ const { getRPC, methods } = require("@ravenrebels/ravencoin-rpc");
 //so just send in whatever
 const username ="whatever";
 const password ="whatever"; 
-//Check the ENDPOINT URL, "https://rvn-rpc-testnet.ting.finance/rpc" or "https://rvn-rpc-mainnet.ting.finance/rpc"
+//Check the ENDPOINT URL, "https://rpc-mainnet.neoxa.net/rpc"
 const rpc = getRPC(username, password, "$ENDPOINT");
 
 const promise = rpc(methods.getassetdata, ["UGLY"]);

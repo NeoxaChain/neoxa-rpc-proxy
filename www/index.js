@@ -94,7 +94,7 @@ async function post(url, body) {
 work();
 
 //An HTML element that prints out the value of "endpoint".
-//We want to print out "Ravencoin mainnet" or similar och many places and only fetch setting once
+//We want to print out "Neoxa mainnet" or similar och many places and only fetch setting once
 class Settings extends HTMLElement {
   connectedCallback() {
     const key = this.getAttribute("key");

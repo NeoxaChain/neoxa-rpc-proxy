@@ -1,11 +1,12 @@
-# ravencoin-rpc-proxy
+# neoxa-rpc-proxy
 
-## A Web API for Ravencoin
+## A Web API for Neoxa
 
-**Purpose**: make Ravencoin blockchain available via HTTP/WEB by exposing the RPC-API via a Proxy that only allows safe procedures.
+**Purpose**: make Neoxa blockchain available via HTTP/WEB by exposing the RPC-API via a Proxy that only allows safe procedures.
 
-Check out this software live at https://rpc.ting.finance/
-![image](https://user-images.githubusercontent.com/9694984/226344965-7f01cee1-99ef-4a7f-b9db-8cfce4ccb5e8.png)
+Check out this software live at 
+
+- Maintnet: https://rpc-main.neoxa.net
 
 
 ## How do I use this software?
@@ -46,7 +47,7 @@ rpc("getaddressbalance", [{ "addresses": ["RXissueSubAssetXXXXXXXXXXXXXWcwhwL"] 
 
 async function rpc(method, params) {
     const data = { method, params };
-    const URL = 'https://rvn-rpc-mainnet.ting.finance/rpc'; //replace with your endpoint
+    const URL = 'https://rpc-main.neoxa.net/rpc'; //replace with your endpoint
     const response = await fetch(URL, {
         method: 'POST',
         headers: {
@@ -71,38 +72,39 @@ According to JSON-RPC 2.0 a request object could contain four attributes, jsonrp
 
 ## How to install
 ```
-git clone https://github.com/ravenrebels/ravencoin-rpc-proxy.git
-cd ravencoin-rpc-proxy
+git clone https://github.com/NeoxaChain/neoxa-rpc-proxy.git
+cd neoxa-rpc-proxy
 npm install 
 ```
 
 ### Sir, how do I configure this software?
 Configure your setup in ./config.json
 ```
-{
-  "concurrency": 4,
-  "endpoint": "https://rpc.ting.finance/rpc",
-  "environment": "Ravencoin Testnet",
-  "local_port": 9999,
-  "nodes": [
     {
-      "name": "Node number 1",
-      "username": "dauser",
-      "password": "dapassword",
-      "raven_url": "http://localhost:8888"
-    },
-    {
-      "name": "Nody two tower", 
-      "raven_url": "http://127.0.0.1:8766",
-      "password": "supermega2354ergsecret",
-      "username": "supermegas3435ecwertwertret"
-    }
-  ]
-}
+        "concurrency": 4,
+        "endpoint": "https://rpc-main.neoxa.net/rpc",
+        "environment": "Neoxa",
+        "local_port": 19999,
+        "nodes": [
+          {
+            "name": "Node 1",
+            "username": "dauser",
+            "password": "dapassword",
+            "neurai_url": "http://localhost:20001"
+          },
+          {
+            "name": "Node 2", 
+            "password": "supermega2354ergsecret",
+            "username": "supermegas3435ecwertwertret",
+            "neurai_url": "http://localhost:19001"
+
+          }
+        ]
+      }
 
   ```
 
-### Sir, how should my Raven core node be configured?
+### Sir, how should my Neoxa core node be configured?
 Here is a recommendation
 ```
 server=1 
@@ -139,12 +141,11 @@ dbcache=4096
 npm start
 ```
 
-## Help with Ravencoin RPC calls, arguments and stuff
-Go to https://rvn-rpc-mainnet.ting.finance/ for in depth description of each RPC call
-![image](https://user-images.githubusercontent.com/9694984/212323158-6ed00511-cfcc-4338-990c-ebb57f590cf0.png)
+## Help with Neoxa RPC calls, arguments and stuff
+Go to https://neoxa-mainnet.neoxa.net/ for in depth description of each RPC call
 
 
-## List of Ravencoin RPC calls
+## List of Neoxa RPC calls
 This is a raw list, a lot of these calls are not whitelisted.
 For example we do NOT let developers call procedure `dumpprivkey`
 ```
@@ -168,8 +169,8 @@ listmyassets "( asset )" ( verbose ) ( count ) ( start ) (confs)
 purgesnapshot "asset_name" block_height
 reissue "asset_name" qty "to_address" "change_address" ( reissuable ) ( new_units) "( new_ipfs )" 
 transfer "asset_name" qty "to_address" "message" expire_time "change_address" "asset_change_address"
-transferfromaddress "asset_name" "from_address" qty "to_address" "message" expire_time "rvn_change_address" "asset_change_address"
-transferfromaddresses "asset_name" ["from_addresses"] qty "to_address" "message" expire_time "rvn_change_address" "asset_change_address"
+transferfromaddress "asset_name" "from_address" qty "to_address" "message" expire_time "xna_change_address" "asset_change_address"
+transferfromaddresses "asset_name" ["from_addresses"] qty "to_address" "message" expire_time "xna_change_address" "asset_change_address"
 
 == Blockchain ==
 clearmempool
