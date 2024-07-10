@@ -142,7 +142,7 @@ npm start
 ```
 
 ## Help with Neoxa RPC calls, arguments and stuff
-Go to https://neoxa-mainnet.neoxa.net/ for in depth description of each RPC call
+Go to https://rpc-mainnet.neoxa.net for in depth description of each RPC call
 
 
 ## List of Neoxa RPC calls
