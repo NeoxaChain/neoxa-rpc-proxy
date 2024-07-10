@@ -6,7 +6,7 @@
 
 Check out this software live at 
 
-- Maintnet: https://rpc-main.neoxa.net
+- Mainnet: https://rpc-mainnet.neoxa.net
 
 
 ## How do I use this software?
